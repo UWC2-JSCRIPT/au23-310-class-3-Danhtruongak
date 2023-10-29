@@ -4,7 +4,14 @@
 // '206-333-4444'
 // '206 333 4444'
 // Returns true if valid, false if not valid
+const testPhoneNumber = function(phoneNum){
+    let regex = /^\([0-9]{3}\)\s[0-9]{3}\-[0-9]{4}$/;
 
+    return regex.test(phoneNum)
+    
+    
+}
+testPhoneNumber()
 
 
 // Explanation of RegExp
@@ -29,7 +36,30 @@ console.log(testPhoneNumber('(206) 33-4444')); // should return false, missing a
 // and run the exec method to capture the area code and remaining part of
 // the phone number.
 // Returns an object in the format {areaCode, phoneNumber}
+function parsePhoneNumber(string){
+  let  regex = /[\(]?(\d{3})[\)]?[\-]?[\s]?(\d{3})[\-](\d{4})/
+  
+  const result =  regex.exec(string);
+  const areaCode = result[1];
+  const partA_Num = result[2];
+  const partB_Num = result[3];
+  const phoneNum = partA_Num.concat(partB_Num)
 
+  return {
+    area_Code: areaCode,
+    phone_Number: phoneNum    
+
+  };
+
+  
+  
+  
+    
+    
+    
+   
+
+}
 
 
 // Check parsePhoneNumber
@@ -38,3 +68,8 @@ console.log(parsePhoneNumber('206-333-4444'));
 
 console.log(parsePhoneNumber('(222) 422-5353'));
 // returns {areaCode: '222', phoneNumber: '4225353'}
+
+
+
+
+
