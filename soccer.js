@@ -16,12 +16,11 @@ const RESULT_VALUES = {
  */
 
 let total = 0;
-function getPointsFromResult(result) {
-  let pointValue = RESULT_VALUES[result]
-  total +=pointValue;
-
-  console.log(total); /// I got 3,6,7 on the console//
-  return total;
+function getPointsFromResult(results) {
+  let pointValue = RESULT_VALUES[results]
+  total += pointValue
+  
+  
 
 }
 
@@ -31,14 +30,10 @@ function getPointsFromResult(result) {
 
 function getTotalPoints(results){
  const letters = results.split("");
-console.log(letters)
- letters.forEach((result=>{
+ 
+ letters.forEach(getPointsFromResult)
   
-  getPointsFromResult(result); 
-
-  }))
-
-
+  return total
 };
 
 
@@ -49,23 +44,37 @@ console.log(getTotalPoints('wwdl')); // should equal 7
 // each argument is a team object in the format { name, results }
 // i.e. {name: 'Sounders', results: 'wwlwdd'}
 // Logs each entry to the console as "Team name: points"
-  function orderTeams(name, result){
-    this.name = name;
-    this.result = result;
+
+function orderTeams(...arguments){
+  const result  = Array.from(arguments);
+ 
+   result.forEach((each=>{
+   const letters =each.result;
+    getTotalPoints(letters)
+
+    console.log(`${each.name}:${total}`)
+ }));
+ 
+};
 
 
-    return Array.from(arguments)
 
-    
-  }
-  orderTeams();
 
+const Sounders = {
+  name: 'Sounders',
+  result: 'wwdl'
+}
+const Galaxy = {
+  name: 'Galaxy',
+  result: 'wlld'
+}
+orderTeams(Sounders,Galaxy);
 // Check orderTeams
-orderTeams(
+/*orderTeams(
   { name: 'Sounders', results: 'wwdl' },
   { name: 'Galaxy', results: 'wlld' }
 );
 // should log the following to the console:
 // Sounders: 7
 // Galaxy: 4
-
+*/

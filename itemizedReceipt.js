@@ -22,29 +22,19 @@ const HotDog = {
   name: 'HotDog',
   price: 4.99
 };
-////////////create a function #1///
 
+let total =0;
 const logReceipt = function(...ItemOrder){ 
-
-//loop for each//
 ItemOrder.forEach((item)=>{
-
 console.log(`Order: ${item.name} -> Price $${item.price}`)
+let price = item.price;
+total +=price
 
- 
-  add(item);
   });
-  
+  console.log(`The total is: $${total}`);
 };
 
-let total = 0;
-//function #2 total//
-function add(item){
-let price = item.price
-total +=price 
-console.log(`Total: $ ${total}`);
 
-};
 
 
 logReceipt(Burito,Soda, Soda,Chips_Salsa);
