@@ -22,3 +22,6 @@ UFO.accelerate();
 const HomeMadeShip = new SpaceShip('My_Home_Made_Ship', 1000000);
 console.log(HomeMadeShip);
 HomeMadeShip.accelerate();
+
+
+
