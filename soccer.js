@@ -47,9 +47,9 @@ console.log(getTotalPoints('wwdl')); // should equal 7
 
 function orderTeams(...arguments){
   const result  = Array.from(arguments);
- 
-   result.forEach((each=>{
+  result.forEach((each=>{
    const letters =each.result;
+   
     getTotalPoints(letters)
 
     console.log(`${each.name}:${total}`)

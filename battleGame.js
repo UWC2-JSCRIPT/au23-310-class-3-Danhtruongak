@@ -5,27 +5,29 @@
  
 };*/
 
-
 // 2. Create player1 and player2 objects below
 // Each should have a name property of your choosing, and health property equal to 10
 
 const player1 = {
-  name:   ' Thao',
-  power:  'dragon punch',
+  name: " Thao",
+  power: "dragon punch",
   health: 10,
 };
 
 const player2 = {
-  name: 'Danh',
-  power: 'tiger kick',
+  name: "Danh",
+  power: "tiger kick",
   health: 10,
 };
 
 // 3. Refactor attack function to an arrow function.  Comment out function above.
 
-const attack = (attackingPlayer, defendingPlayer, baseDamage, variableDamage)=>{
- 
-};
+const attack = (
+  attackingPlayer,
+  defendingPlayer,
+  baseDamage,
+  variableDamage
+) => {};
 
 // DO NOT MODIFY THE CODE BELOW THIS LINE
 // Set attacker and defender.  Reverse roles each iteration
